@@ -1,20 +1,68 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="page_content">
+    <div class="leftcol">
+        <div class="searchbar">
+            <div class="sortbox"></div>
+            <div class="searchbar_left">
+                <input type="text" id="term" (keyup)="onNameKeyUp($event)">
+                <button class="btn_small" (click)=""><span>Buscar</span></button>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div id="search_result_container">
+            <div class="search_result_row" *ngFor="let i of steamAppsFiltered">
+                <a (click)="showMore(i.appid)">
+                    <div class="search_result_column_image">
+                        <img src="https://steamcdn-a.akamaihd.net/steam/apps/{{i.appid}}/capsule_sm_120.jpg">
+                    </div>
+                    <div class="search_result_column_text">
+                        <div class="search_result_column first_col">{{ i.appid }}</div>
+                        <div class="search_result_column second_col">{{ i.name }}</div>
+                        <div class="search_result_column third_col"><button class="btn_small" (click)="showMore(i.appid)"><span>Detalles</span></button></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="rightcol">
+        <div class="block" *ngIf="showImage()">
+            <div class="block_header">Imagen:</div>
+            <div class="block_content">
+                <a [href]="showImage()" target="_blank"><img [src]="showImage()" width="100%" /></a>
+            </div>
+        </div>
+        <div class="block" *ngIf="!steamAppFailure">
+            <div class="block_header">Nombre:</div>
+            <div class="block_content">{{ showName() }}</div>
+        </div>
+        <div class="block" *ngIf="steamAppFailure">
+            <div class="block_header_error">Error:</div>
+            <div class="block_content_error">El juego o la aplicación ya no se encuentra disponible.</div>
+        </div>
+        <div class="block" *ngIf="showType()">
+            <div class="block_header">Tipo:</div>
+            <div class="block_content">{{ showType() }}</div>
+        </div>
+        <div class="block" *ngIf="showPrice()">
+            <div class="block_header">Precio:</div>
+            <div class="block_content">{{ showPrice() }}</div>
+        </div>
+        <div class="block" *ngIf="listGenres()">
+            <div class="block_header">Géneros:</div>
+            <div class="block_content">{{ listGenres() }}</div>
+        </div>
+        <div class="block" *ngIf="showDescription()">
+            <div class="block_header">Descripción:</div>
+            <div class="block_content" [innerHtml]="showDescription()" style="text-align: justify;"></div>
+        </div>
+        <div class="block" *ngIf="!showDescription() && showShortDescription()">
+            <div class="block_header">Descripción:</div>
+            <div class="block_content" [innerHtml]="showShortDescription()" style="text-align: justify;"></div>
+        </div>
+        <div class="block" *ngIf="showScore()">
+            <div class="block_header">Puntuación (Metacritic):</div>
+            <div class="block_content">{{ showScore() }}</div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-

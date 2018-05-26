@@ -1,0 +1,175 @@
+.page_content {
+    width: 1010px;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+
+div.leftcol {
+    width: 686px;
+    float: left;
+}
+
+.searchbar {
+    margin-bottom: 4px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 6px;
+}
+
+.searchbar .sortbox {
+    float: right;
+    margin-top: 4px;
+}
+
+.searchbar_left {
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: 1px;
+}
+
+#term {
+    background-color: rgba( 103, 193, 245, 0.2);
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    box-shadow: 1px 1px 0px rgba( 103, 193, 245, 0.15);
+    width: 300px;
+    padding: 5px;
+    max-width: calc( 100% - 80px - 2px);
+}
+
+.searchbar_left>button {
+    height: 25px;
+    margin-left: 5px;
+    border-radius: 2px;
+    border: none;
+    padding: 1px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: #67c1f5 !important;
+    background: rgba( 103, 193, 245, 0.2);
+}
+
+.btn_small>span {
+    padding: 0 15px;
+    font-size: 12px;
+    line-height: 20px;
+    border-radius: 2px;
+    display: block;
+    background: transparent;
+}
+
+#search_result_container {
+    max-width: 686px;
+}
+
+.search_result_row {
+    border: 1px solid rgba(139, 185, 224, 0);
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 5px 0;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: #c6d4df;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+}
+
+.search_result_column_image {
+    width: 120px;
+    height: 45px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.search_result_column_text {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.search_result_column {
+    height: 45px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 45px;
+    margin-left: 5px;
+}
+
+.first_col {
+    padding-left: 8px;
+    width: 85px;
+    color: #4c6c8c;
+    font-size: 11px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.second_col {
+    width: 373px;
+}
+
+.third_col {
+    padding-right: 10px;
+}
+
+.rightcol {
+    width: 308px;
+    margin-left: 14px;
+    float: right;
+}
+
+.block {
+    margin-bottom: 16px;
+}
+
+.block .block_header {
+    background: rgba( 255, 255, 255, 0.1);
+    padding: 4px 4px 4px 6px;
+    color: #c7d5e0;
+    font-size: 12px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+}
+
+.block .block_header_error {
+    background: rgba(255, 0, 0, 0.1);
+    padding: 4px 4px 4px 6px;
+    color: #ffd5e0;
+    font-size: 12px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+}
+
+.block_content {
+    overflow: hidden;
+    padding: 4px;
+    border: 1px solid rgba( 255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.block_content_error {
+    overflow: hidden;
+    padding: 4px;
+    color: #ffd5e0;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.search_result_column>button {
+    height: 25px;
+    margin-left: 5px;
+    border-radius: 2px;
+    border: none;
+    padding: 1px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: #67c1f5 !important;
+    background: rgba( 103, 193, 245, 0.2);
+}
